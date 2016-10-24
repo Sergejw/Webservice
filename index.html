@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="UTF-8">
+   <title>Formular</title>
+   <link rel="stylesheet" href="bootstrap.min.css">
+   <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+   <div class="container">
+      <div class="panel panel-default">
+
+         <div class="panel-heading">
+            <h3 class="panel-title">Neuen Artikel eintragen</h3>
+         </div>
+
+         <div class="panel-body">
+
+            <form class="products-form" role="form" action="" >
+               <input class="form-control" type="text" name="name" placeholder="Produktname">
+               <input class="form-control" type="url" name="url" placeholder="Artikel-URL">
+               <input class="form-control" type="url" name="image" placeholder="Artikel-Bild">
+               <div class="row">
+                  <div class="col-xs-6 input-group">
+                     <input type="number" class="form-control" name="price" placeholder="Preis">
+                     <span class="input-group-addon">€</span>
+                  </div>
+                  <div class="col-xs-6">
+                     <button type="button" class="btn btn-primary btn-block btn-create">Anlegen</button>
+                     <button type="button" class="btn btn-primary btn-block btn-update">Aktualisieren</button>
+                  </div>
+               </div>
+               <input type="hidden" name="id">
+            </form>
+
+         </div>
+         <!-- /.panel-body -->
+      </div>
+      <!-- /.panel -->
+
+      <div class="row list-group products-list">
+         <!-- Wird per Script gefüllt -->
+      </div>
+
+   </div>
+   <!-- /.container -->
+
+   <textarea class="products-template">
+      <div class="item col-xs-4">
+         <div class="thumbnail" data-id="{{ID}}">
+            <a href="{{URL}}">
+               <img src="{{IMAGE}}" alt="Produktbild">
+            </a>
+            <div class="buttons-edit">
+               <button type="button" class="btn btn-default btn-sm btn-edit">Edit</button>
+               <button type="button" class="btn btn-default btn-sm btn-delete">Delete</button>
+            </div>
+            <div class="caption">
+               <h4><a href="{{URL}}">{{NAME}}</a></h4>
+               <span class="lead">{{PRICE}}</span>
+            </div>
+         </div>
+      </div>
+   </textarea>
+
+   <script src="jquery-2.1.4.min.js"></script>
+   <script src="script.js"></script>
+
+</body>
+
+</html>
